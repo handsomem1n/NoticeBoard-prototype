@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입고</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>LoIS eFLEXs</h1>
+        </div>
+        <div class="user-info">
+            <p>로이스님</p>
+            <p>2024.08.00 12:00:00</p>
+            <input type="text" placeholder="메뉴검색">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>품목</li>
+                <li>입고/반품관리</li>
+                <li>주문관리</li>
+                <li>재고관리</li>
+                <li>CS/이벤트</li>
+                <li>셀러서비스</li>
+                <li>영업/운영자료관리</li>
+                <li>기준정보</li>
+                <li>정책</li>
+                <li>시스템관리</li>
+                <li>정산관리</li>
+                <li class="toggle-title">네이버 게시판
+                    <ul class="toggle-content">
+                        <li><a href="main.html"><span class="dot"></span>전체 공지사항</a></li>
+                        <li><a href="출고.html"><span class="dot"></span>출고</a></li>
+                        <li><a href="입고.html"><span class="dot"></span>입고</a></li>
+                        <li><a href="반출.html"><span class="dot"></span>반출</a></li>
+                        <li><a href="이벤트.html"><span class="dot"></span>이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>입고</h1>
+            <!-- <p>MDWH0001M</p> -->
+        </header>
+        <div class="search-bar">
+            <p>고객사명</p><input type="text" id="clientCompanyName" placeholder="고객사명">
+            <p>분류</p><select>
+                <option value="">선택</option>
+                <option value="입고가이드미준수">입고 가이드 미준수</option>
+                <option value="회송여부확인">회송여부 확인</option>
+            </select>
+            <p>완료여부</p><select>
+                <option value="">선택</option>
+                <option value="확인중">확인 중</option>
+                <option value="완결">완결</option>
+            </select>
+            <button onclick="search()">조회</button>
+            <button onclick="reset()">초기화</button>
+        </div>
+        <div class="tables">
+            <h2>조회결과</h2>
+            <table id="noticeTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 공지사항 목록 -->
+                </tbody>
+            </table>
+            <table id="detailTable">
+                <h2>상세 정보 및 가이드</h2>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 공지사항 세부사항 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+body {
+    height: 100%;
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+.sidebar {
+    width: 250px;
+    background-color: #2a3137;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    position: relative; 
+}
+.sidebar .logo h1 {
+    font-size: 28px;
+    text-align: center;
+}
+.sidebar .user-info p {
+    margin: 5px 0;
+}
+.sidebar input {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 3px;
+    border: none;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+}
+// 네이버 게시판 클릭 시 하위 항목들 담는 바운더리
+.menu li.active {
+    /* background-color: #186dd5; 남색 배경 */
+    background-color: #2a3137;
+    /* width: relative; */
+    /* width : 100; */
+}
+
+.menu li ul {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+    width:100%;
+    /* background-color: #1f242a; 사이드바와 동일한 배경색 */
+    background-color: #2a3137;
+    position: relative; 
+}
+
+/* 하위항목 : 전체 공지사항, 출고, 입고, 반출, 이벤트 */
+.menu li ul.toggle-content {
+    padding: 0;
+    /* padding-left: 1px; */
+}
+
+/* 클릭된 상태에서 보이도록 설정 */
+.toggle-content.show {
+    display: block;
+}
+
+.toggle-title {
+    cursor: pointer; /* 클릭 가능하게 보이도록 */
+    /* font-weight: bold; */
+}
+
+.dot {
+    height: 3px;
+    width: 3px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-bar input, .search-bar select, .search-bar button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.tables {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
