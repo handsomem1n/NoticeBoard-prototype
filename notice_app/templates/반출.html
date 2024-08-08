@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반출</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
     <div class="sidebar">
@@ -31,11 +31,12 @@
                 <li>정산관리</li>
                 <li class="toggle-title">네이버 게시판
                     <ul class="toggle-content">
-                        <li><a href="main.html"><span class="dot"></span>전체 공지사항</a></li>
-                        <li><a href="출고.html"><span class="dot"></span>출고</a></li>
-                        <li><a href="입고.html"><span class="dot"></span>입고</a></li>
-                        <li><a href="반출.html"><span class="dot"></span>반출</a></li>
-                        <li><a href="이벤트.html"><span class="dot"></span>이벤트</a></li>
+                        <li><a href="{{ url_for('main') }}"><span class="dot"></span>전체 공지사항</a></li>
+                        <li><a href="{{ url_for('출고') }}"><span class="dot"></span>출고</a></li>
+                        <li><a href="{{ url_for('입고') }}"><span class="dot"></span>입고</a></li>
+                        <li><a href="{{ url_for('반출') }}"><span class="dot"></span>반출</a></li>
+                        <li><a href="{{ url_for('이벤트') }}"><span class="dot"></span>이벤트</a></li>
+                        
                     </ul>
                 </li>
             </ul>
@@ -44,50 +45,57 @@
     <div class="main-content">
         <header>
             <h1>반출</h1>
-            <!-- <p>MDWH0001M</p> -->
         </header>
         <div class="search-bar">
             <p>고객사명</p><input type="text" id="clientCompanyName" placeholder="고객사명">
-            <p>분류</p><select>
+            <p>분류</p>
+            <select id="classification">
                 <option value="">선택</option>
-                <!-- '택배', '화물'에 해당하는 영어로 된 변수 생성 시 여기에도 바꿔주기. 우선적으로 한글로해둠-->
                 <option value="택배">택배</option>
                 <option value="화물">화물</option>
             </select>
-            <p>완료여부</p><select>
+            <p>완료여부</p>
+            <select id="completionStatus">
                 <option value="">선택</option>
-                 <!-- '확인중', '완결'에 해당하는 영어로 된 변수 생성 시 여기에도 바꿔주기. 우선적으로 한글로해둠-->
-                <option value="확인중">확인 중</option>
-                <option value="완결">완결</option>
+                <option value="확인 중">확인 중</option>
+                <option value="완결 중">완결 중</option>
             </select>
             <button onclick="search()">조회</button>
             <button onclick="reset()">초기화</button>
         </div>
         <div class="tables">
             <h2>조회결과</h2>
-            <table id="noticeTable">
+            <div class="date-filters">
+                <button onclick="setDateFilter('today')">오늘</button>
+                <button onclick="setDateFilter('1week')">1주</button>
+                <button onclick="setDateFilter('1month')">1개월</button>
+                <button onclick="setDateFilter('3months')">3개월</button>
+                <button onclick="setDateFilter('6months')">6개월</button>
+                <button onclick="setDateFilter('1year')">1년</button>
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+                <button onclick="searchByDate()">검색</button>
+            </div>
+            <table id="capaTable">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th>전체 CAPA</th>
+                        <th>가용 CAPA</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 공지사항 목록 -->
-                </tbody>
-            </table>
-            <table id="detailTable">
-                <h2>상세 정보 및 가이드</h2>
-                <thead>
                     <tr>
-                        <th>No</th>
+                        <td id="totalCapa"></td>
+                        <td id="availableCapa"></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <!-- 공지사항 세부사항 -->
                 </tbody>
             </table>
         </div>
+        <div class="tables">
+            <h2>상세정보 및 가이드</h2>
+            <!-- 나중에 추가할 표 -->
+        </div>
     </div>
-    <script src="main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
