@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadNotices();
+    if (document.getElementById('noticeTable')) {
+        loadNotices();
+    }
+    if (document.getElementById('classification')) {
+        setDateFilter('today'); // 기본값을 오늘로
+    }
     setupToggleMenus();
 });
 
@@ -95,4 +100,54 @@ function reset() {
     document.getElementById('clientCompanyName').value = '';
     document.getElementById('deletionStatus').value = '';
     loadNotices();
+}
+
+
+// 반출.html
+
+// 반출.html 기능 추가
+function setDateFilter(period) {
+    const today = new Date();
+    let startDate, endDate;
+    
+    switch (period) {
+        case 'today':
+            startDate = today;
+            endDate = today;
+            break;
+        case '1week':
+            startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+            endDate = today;
+            break;
+        case '1month':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+            endDate = today;
+            break;
+        case '3months':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+            endDate = today;
+            break;
+        case '6months':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+            endDate = today;
+            break;
+        case '1year':
+            startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+            endDate = today;
+            break;
+        default:
+            startDate = today;
+            endDate = today;
+    }
+
+    document.getElementById('startDate').valueAsDate = startDate;
+    document.getElementById('endDate').valueAsDate = endDate;
+}
+
+function searchByDate() {
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    
+    console.log(`기간 검색: 시작일=${startDate}, 종료일=${endDate}`);
+    // 날짜 필터 검색 로직을 여기에 추가
 }

@@ -163,3 +163,21 @@ th.content-column {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* 반출.html */
+.date-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date-filters button, .date-filters input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.date-filters input[type="date"] {
+    width: 150px;
+}

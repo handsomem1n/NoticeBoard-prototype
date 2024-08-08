@@ -1,10 +1,26 @@
-from flask import request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template
 from app import app, db
 from models import Notice
 
 @app.route('/')
-def index():
+def main():
     return render_template('main.html')
+
+@app.route('/출고')
+def 출고():
+    return render_template('출고.html')
+
+@app.route('/입고')
+def 입고():
+    return render_template('입고.html')
+
+@app.route('/반출')
+def 반출():
+    return render_template('반출.html')
+
+@app.route('/이벤트')
+def 이벤트():
+    return render_template('이벤트.html')
 
 @app.route('/api/notices', methods=['POST'])
 def add_notice():
