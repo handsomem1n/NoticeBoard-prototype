@@ -31,11 +31,12 @@
                 <li>정산관리</li>
                 <li class="toggle-title">네이버 게시판
                     <ul class="toggle-content">
-                        <li><a href="main.html"><span class="dot"></span>전체 공지사항</a></li>
-                        <li><a href="출고.html"><span class="dot"></span>출고</a></li>
-                        <li><a href="입고.html"><span class="dot"></span>입고</a></li>
-                        <li><a href="반출.html"><span class="dot"></span>반출</a></li>
-                        <li><a href="이벤트.html"><span class="dot"></span>이벤트</a></li>
+                        <li><a href="{{ url_for('main') }}"><span class="dot"></span>전체 공지사항</a></li>
+                        <li><a href="{{ url_for('출고') }}"><span class="dot"></span>출고</a></li>
+                        <li><a href="{{ url_for('입고') }}"><span class="dot"></span>입고</a></li>
+                        <li><a href="{{ url_for('반출') }}"><span class="dot"></span>반출</a></li>
+                        <li><a href="{{ url_for('이벤트') }}"><span class="dot"></span>이벤트</a></li>
+                        
                     </ul>
                 </li>
             </ul>
