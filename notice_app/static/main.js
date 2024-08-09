@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setupToggleMenus();
 });
 
+/* 사이드바 시간 설정*/
+function updateTime() {
+    const now = new Date();
+    const options = { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const koreaTime = now.toLocaleString('ko-KR', options);
+    document.getElementById('currentTime').textContent = koreaTime;
+}
+
+setInterval(updateTime, 1000); // 1초마다 시간 표시
+updateTime(); //
+/* 사이드바 시간 설정*/
+
 // '추가' 버튼 눌렀을 때
 function openNoticeForm() {
     document.getElementById('noticeModal').style.display = 'block';

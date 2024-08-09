@@ -3,7 +3,11 @@ body {
     display: flex;
     font-family: Arial, sans-serif;
 }
-
+/* 사이드바 - 시간 표시 */
+#currentTime {
+    /* font-weight: bold; */
+    color: #efdfdf;
+}
 
 .sidebar {
     width: 250px;
@@ -23,7 +27,7 @@ body {
 }
 .container {
     text-align: right; /* Align inline or inline-block elements to the right */
-    padding: 5px;
+    padding: 2px;
 }
 .postingButton {
     background-color: #5c53ad;
@@ -83,6 +87,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    border: 1px solid black;
 }
 header {
     display: flex;
@@ -94,7 +99,7 @@ header {
 .search-bar {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .search-bar input, .search-bar select, .search-bar button {
     padding: 10px;
@@ -104,7 +109,10 @@ header {
 .tables {
     display: flex;
     flex-direction: column;
-    /* gap: px; */
+    border: 2px solid rgb(228, 227, 236); /* 두께 2픽셀, 실선, 검은색 테두리 */
+    border-radius: 10px; /* 모서리 둥글기 */
+    padding: 0px 10px 20px 20px;
+    overflow: hidden; /* 테두리 반경에 따라 내용이 잘리지 않도록 함 */
 }
 table {
     width: 100%;
