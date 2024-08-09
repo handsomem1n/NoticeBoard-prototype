@@ -78,6 +78,7 @@ function loadNotices() {
         noticeTableBody.innerHTML = '';
         data.forEach((notice, index) => {
             const row = document.createElement('tr');
+            row.classList.add('clickable-row'); // clickable-row와 연동 - notice.title에 마우스 포인터 올려두면 마우스 포인터 변경
             row.innerHTML = `<td>${index + 1}</td><td>${notice.title}</td>`;
             row.addEventListener('click', () => showNoticeDetails(notice));
             noticeTableBody.appendChild(row);

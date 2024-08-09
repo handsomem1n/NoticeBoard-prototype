@@ -87,7 +87,9 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    border: 1px solid black;
+    border: 2px solid rgb(228, 227, 236);
+    border-radius: 10px;
+    
 }
 header {
     display: flex;
@@ -100,7 +102,14 @@ header {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    /* justify-content: space-between;  // 조회,초기화 버튼과의 상호 좌우 배치 */
 }
+// 조회&초기화 버튼 - 그룹화
+.button-group {
+    display: flex;
+    gap: 10px; /* 버튼 사이의 간격 */
+}
+
 .search-bar input, .search-bar select, .search-bar button {
     padding: 10px;
     border: 1px solid #ddd;
@@ -137,6 +146,11 @@ th.content-column {
     width: 20px; /* No 열의 고정된 너비 */
 }
 
+// 전체 공지사항에서 마우스 올려두면 pointer 모양 변경
+.clickable-row {
+    cursor: pointer;
+}
+
 /* 모달 창 */
 .modal {
     display: none;
@@ -156,7 +170,9 @@ th.content-column {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    border-radius : 2px;
+    width: 30%;
+    height: 30%;
 }
 /* The Close Button */
 .close {

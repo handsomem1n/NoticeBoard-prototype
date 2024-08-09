@@ -55,8 +55,10 @@
                 <option value="반출">반출</option>
                 <option value="이벤트">이벤트</option>
             </select>
-            <button onclick="search()">조회</button>
-            <button onclick="reset()">초기화</button>
+            <div class="button-group">
+                <button onclick="search()">조회</button>
+                <button onclick="reset()">초기화</button>
+            </div>
         </div>
         
         <div class="tables">
@@ -101,6 +103,7 @@
             <form id="noticeForm">
                 <label for="title">제목:</label>
                 <input type="text" id="title" name="title" required>
+                <br><br><br><br>
                 <label for="content">내용:</label>
                 <textarea id="content" name="content" required></textarea>
                 <button type="submit">등록</button>
