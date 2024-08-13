@@ -76,7 +76,7 @@
                 <input type="date" id="endDate">
                 <button onclick="searchByDate()">검색</button>
             </div>
-            <table id="capaTable">
+            <table class="capaTable">
                 <thead>
                     <tr>
                         <th>전체 CAPA</th>
@@ -90,6 +90,64 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="actions">
+                <button onclick="addRow()">행 추가</button>
+                <button onclick="deleteRow()">행 삭제</button>
+                <button onclick="saveTable()">저장</button>
+                <button onclick="clearTable()">삭제</button>
+            </div>
+
+            <table id="detailCapaTable">
+                <thead>
+                    <tr>
+                        <th rowspan="2"><input type="checkbox" id="checkAll"></th> <!-- 체크박스 -->
+                        <th rowspan="2">No</th>
+                        <th rowspan="2">F/C</th>
+                        <th rowspan="2">고객</th>
+                        <th rowspan="2">고객명</th>
+                        <th colspan="7">입고가능요일</th> <!-- 요일들을 그룹화 -->
+                        <th rowspan="2">작업시작시간</th>
+                        <th rowspan="2">작업종료시간</th>
+                        <th rowspan="2">등록가능일수</th>
+                        <th rowspan="2">제외시간</th>
+                        <th rowspan="2">당일등록가능</th>
+                    </tr>
+                    <tr>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                        <th>일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 기본적으로 5개의 빈 행 추가 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="time"></td>
+                        <td><input type="time"></td>
+                        <td><input type="number"></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
         </div>
         <div class="tables">
             <h2>상세정보 및 가이드</h2>

@@ -164,7 +164,7 @@ th.content-column {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
-/* Modal Content */
+// 모달
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -174,7 +174,6 @@ th.content-column {
     width: 30%;
     height: 30%;
 }
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -188,7 +187,32 @@ th.content-column {
     cursor: pointer;
 }
 
-/* 반출.html */
+// 반출 ~
+// 의존 관계 때문에 정상동작 x
+.capaTable {
+    width: 30px !important; 
+    height: 30px !important;
+    margin: 0 auto !important; 
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+}
+
+.capaTable th, .capaTable td {
+    border: 1px solid #000 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    gap: 7px;
+    
+    /* font-size: 12px; */
+    padding: 20px 2px 1px 1px;
+    border-radius: 8px;
+}
+
 .date-filters {
     display: flex;
     gap: 10px;
@@ -205,3 +229,37 @@ th.content-column {
 .date-filters input[type="date"] {
     width: 150px;
 }
+
+
+#detailCapaTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#detailCapaTable th, #detailCapaTable td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle; 
+}
+
+#detailCapaTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#detailCapaTable input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+#detailCapaTable input[type="time"],
+#detailCapaTable input[type="text"],
+#detailCapaTable input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+// ~ 반출
