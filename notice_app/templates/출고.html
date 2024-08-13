@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>출고</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
     <div class="sidebar">
@@ -39,14 +39,12 @@
                         
                     </ul>
                 </li>
-                
             </ul>
         </nav>
     </div>
     <div class="main-content">
         <header>
             <h1>출고</h1>
-            <!-- <p>MDWH0001M</p> -->
         </header>
         <div class="search-bar">
             <p>고객사명</p><input type="text" id="clientCompanyName" placeholder="고객사명">
@@ -59,7 +57,7 @@
             </select>
             <p>완료여부</p><select>
                 <option value="">선택</option>
-                <option value="확인 중">확인 중</option>
+                <option value="확인중">확인 중</option>
                 <option value="완결">완결</option>
             </select>
             <button onclick="search()">조회</button>
@@ -90,6 +88,6 @@
             </table>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
