@@ -228,4 +228,4 @@ function deleteRow() {
         table.rows[i].cells[1].innerHTML = i + 1;
     }
 }
-// 반출 행 추가 and 행 삭제
+
