@@ -136,7 +136,7 @@ th, td {
     padding: 10px 10px 7px 10px;
 }
 th {
-    background-color: #f2f2f2;
+    background-color: #d8eaff; // 로이스 색상
 }
 
 th.no-column {

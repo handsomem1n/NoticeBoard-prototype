@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <title>입고</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
@@ -63,24 +63,33 @@
             <button onclick="search()">조회</button>
             <button onclick="reset()">초기화</button>
         </div>
-        <div class="tables">
+        <div class="inbound_outbound_tables">
             <h2>조회결과</h2>
-            <table id="noticeTable">
+            <table class="I/O-table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th class="no-column">No</th>
+                        <th class="FC-code">F/C코드</th>
+                        <th class="FC-category">F/C유형</th>
+                        <th class="description">설명</th>
+                        <th class="phone-number">전화번호</th>
+                        <th class="FAX-number">팩스번호</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- 공지사항 목록 -->
                 </tbody>
             </table>
-            <table id="detailTable">
+            <table id="I/O-detailTable">
                 <h2>상세 정보 및 가이드</h2>
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th class="no-column">No</th>
+                        <th class="center-code">센터코드</th>
+                        <th class="categorialCode">F/C유형</th>
+                        <th class="languageCode">설명</th>
                     </tr>
+                </thead>
                 </thead>
                 <tbody>
                     <!-- 공지사항 세부사항 -->
