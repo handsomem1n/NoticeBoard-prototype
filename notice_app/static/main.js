@@ -78,8 +78,11 @@ function loadNotices() {
         noticeTableBody.innerHTML = '';
         data.forEach((notice, index) => {
             const row = document.createElement('tr');
-            row.classList.add('clickable-row'); // clickable-row와 연동 - notice.title에 마우스 포인터 올려두면 마우스 포인터 변경
-            row.innerHTML = `<td>${index + 1}</td><td>${notice.title}</td>`;
+            row.classList.add('clickable-row');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${notice.title}<button onclick="deleteNotice(${notice.id})">삭제</button></td>
+            `;
             row.addEventListener('click', () => showNoticeDetails(notice));
             noticeTableBody.appendChild(row);
         });
@@ -88,6 +91,27 @@ function loadNotices() {
         console.error('Error:', error);
     });
 }
+
+
+function deleteNotice(id) {
+    if (confirm('정말로 이 공지사항을 삭제하시겠습니까?')) {
+        fetch(`/api/notices/${id}`, {
+            method: 'DELETE',
+        })
+        .then(response => {
+            if (response.ok) {
+                loadNotices();  // 공지사항 목록을 새로고침
+                alert('공지사항이 삭제되었습니다');
+            } else {
+                alert('삭제 중 문제가 발생했습니다');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+}
+
 
 function showNoticeDetails(notice) {
     document.getElementById('detailTitle').innerText = notice.title;

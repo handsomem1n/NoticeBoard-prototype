@@ -30,6 +30,14 @@ def add_notice():
     db.session.commit()
     return jsonify({'message': '공지사항이 추가되었습니다'}), 201
 
+@app.route('/api/notices/<int:id>', methods=['DELETE'])
+def delete_notice(id):
+    notice = Notice.query.get_or_404(id)
+    db.session.delete(notice)
+    db.session.commit()
+    return jsonify({'message': '공지사항이 삭제되었습니다'}), 200
+
+
 @app.route('/api/notices', methods=['GET'])
 def get_notices():
     notices = Notice.query.all()

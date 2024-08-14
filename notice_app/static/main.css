@@ -146,6 +146,8 @@ th.content-column {
     width: 20px; /* No 열의 고정된 너비 */
 }
 
+
+
 // 전체 공지사항에서 마우스 올려두면 pointer 모양 변경
 .clickable-row {
     cursor: pointer;
