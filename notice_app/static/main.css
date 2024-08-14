@@ -29,9 +29,12 @@ body {
     text-align: right; /* Align inline or inline-block elements to the right */
     padding: 2px;
 }
+
+#noticeTable th {
+    background-color: #d8eaff; // 로이스 색상
+}
 .postingButton {
-    background-color: #5c53ad;
-    color: white;
+    background-color: #91aff6;
     padding: 7px 13px;
     font-size: 16px;
     cursor: pointer;
@@ -174,11 +177,9 @@ th.content-column {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius : 2px;
     width: 30%;
     height: 30%;
+    border-radius: 10px;
 }
 .close {
     color: #aaa;
@@ -203,11 +204,19 @@ th.content-column {
     table-layout: fixed !important;
 }
 
-.capaTable th, .capaTable td {
+.capaTable th{
+    border: 1px solid #000 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #d8eaff; // 로이스 색상
+}
+.capaTable td {
     border: 1px solid #000 !important;
     text-align: center !important;
     vertical-align: middle !important;
 }
+
+
 .actions {
     display: flex;
     justify-content: flex-end;
@@ -243,11 +252,22 @@ th.content-column {
     table-layout: fixed;
 }
 
-#detailCapaTable th, #detailCapaTable td {
+#detailCapaTable th {
     border: 1px solid #000;
     padding: 8px;
     text-align: center;
     vertical-align: middle; 
+}
+/* #detailCapaTable tr {
+    background-color: #d8eaff;
+} */
+
+#detailCapaTable td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle; 
+
 }
 
 #detailCapaTable th {
