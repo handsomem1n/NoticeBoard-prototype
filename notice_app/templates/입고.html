@@ -45,56 +45,95 @@
     <div class="main-content">
         <header>
             <h1>입고</h1>
-            <!-- <p>MDWH0001M</p> -->
         </header>
         <div class="search-bar">
             <p>고객사명</p><input type="text" id="clientCompanyName" placeholder="고객사명">
-            <p>분류</p><select>
-                <option value="">선택</option>
-                <!-- '입고가이드미준수', '회송여부확인'에 해당하는 영어로 된 변수 생성 시 여기에도 바꿔주기. 우선적으로 한글로해둠-->
-                <option value="입고가이드미준수">입고 가이드 미준수</option>
-                <option value="회송여부확인">회송여부 확인</option>
+            <p>분류</p>
+            <select>
+                <option value="">전체</option>
+                <option value="품목미등록">품목미등록</option>
+                <option value="전산재고부족">전산재고부족</option>
+                <option value="실물재고부족">실물재고부족</option>
+                <option value="파손 및 오염">파손 및 오염</option>
             </select>
-            <p>완료여부</p><select>
-                <option value="">선택</option>
+            <p>완료여부</p>
+            <select>
+                <option value="">전체</option>
                 <option value="확인중">확인 중</option>
                 <option value="완결">완결</option>
             </select>
-            <button onclick="search()">조회</button>
+            <button class="search-button" onclick="searchOutbound()">조회</button>
             <button onclick="reset()">초기화</button>
         </div>
         <div class="inbound_outbound_tables">
             <h2>조회결과</h2>
-            <table class="IO-table">
-                <thead>
-                    <tr>
-                        <th class="no-column">No</th>
-                        <th class="FC-code">F/C코드</th>
-                        <th class="FC-category">F/C유형</th>
-                        <th class="description">설명</th>
-                        <th class="phone-number">전화번호</th>
-                        <th class="FAX-number">팩스번호</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 공지사항 목록 -->
-                </tbody>
-            </table>
-            <table id="IO-detailTable">
+            <div class="table-container">
+                <table class="IO-table">
+                    <thead>
+                        <tr>
+                            <th class="no-column">No</th>
+                            <th class="FC-code">F/C코드</th>
+                            <th class="FC-category">F/C유형</th>
+                            <th class="description">설명</th>
+                            <th class="phone-number">전화번호</th>
+                            <th class="FAX-number">팩스번호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JavaScript를 통해 여기에 행이 추가될 것입니다. -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="detail-table">
                 <h2>상세 정보 및 가이드</h2>
-                <thead>
-                    <tr>
-                        <th class="no-column">No</th>
-                        <th class="center-code">센터코드</th>
-                        <th class="categorialCode">F/C유형</th>
-                        <th class="languageCode">설명</th>
-                    </tr>
-                </thead>
-                </thead>
-                <tbody>
-                    <!-- 공지사항 세부사항 -->
-                </tbody>
-            </table>
+                <table id="IO-detailTable">
+                    <thead>
+                        <tr>
+                            <th class="no-column">No</th>
+                            <th class="center-code">센터코드</th>
+                            <th class="categorialCode">F/C유형</th>
+                            <th class="languageCode">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                        <!-- 데이터 행 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 메모장 역할의 재고이동현황 테이블 -->
+            <div class="stock-movement-table">
+                <h2>재고이동현황</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>일자</th>
+                            <th>가용</th>
+                            <th>비가용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08월 11일</td>
+                            <td>2A01 -> 2A02</td>
+                            <td>2B01 -> STOP01</td>
+                        </tr>
+                        <tr>
+                            <td>08월 12일</td>
+                            <td>2B01 -> 2B03</td>
+                            <td>2A01 -> STOP03</td>
+                        </tr>
+                        <tr>
+                            <td>08월 13일</td>
+                            <td>2C01 -> 2C02</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="{{ url_for('static', filename='main.js') }}"></script>

@@ -292,5 +292,92 @@ th.content-column {
 
 
 // 입고, 출고 ~
-// 여기에 추가해줘.
+.detail-and-stock-movement {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detail-table {
+    width: 70%;
+}
+/* 테이블 컨테이너에 고정된 높이와 스크롤 설정 */
+.table-container {
+    max-height: 250px; /* 5개의 행을 보여줄 수 있는 높이 */
+    overflow-y: auto; /* 5개 이상의 행이 추가되면 스크롤바가 나타남 */
+}
+
+.IO-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.IO-table th, .IO-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.IO-table th {
+    background-color: #d8eaff; /* 로이스 색상 */
+}
+
+.IO-table th.no-column {
+    width: 20px; /* No 열의 고정된 너비 */
+}
+.IO-table th.title-column {
+    width: 200px; /* 제목 열의 고정된 너비 */
+}
+.IO-table th.content-column {
+    width: 20px; /* No 열의 고정된 너비 */
+}
+
+/* 기본적인 레이아웃 스타일 (생략된 기존 스타일 유지) */
+
+.stock-movement-table {
+    position: absolute;
+    top: 500px; 
+    right: 30px;
+    width: 300px;
+    font-size: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.stock-movement-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stock-movement-table th, .stock-movement-table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+
+.stock-movement-table h2 {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.search-button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f1f1f1; /* 기본 배경색 */
+    cursor: pointer; /* 마우스를 올렸을 때 포인터가 손 모양으로 변경 */
+    transition: background-color 0.3s ease; /* 배경색 변경에 애니메이션 추가 */
+}
+
+.search-button:hover {
+    background-color: #e0e0e0; /* 마우스를 올렸을 때 배경색 변경 */
+    border-color: #ccc; /* 마우스를 올렸을 때 테두리 색상 변경 */
+}
+
+
+
 // ~ 입고, 출고

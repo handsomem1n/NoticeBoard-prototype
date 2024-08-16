@@ -6,7 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
         setDateFilter('today'); // 기본값을 오늘로
     }
     setupToggleMenus();
+    // 출고.html 페이지 로드 시 기본적으로 5개의 빈 행 추가
+    initializeTableWithEmptyRows();
 });
+
+/* 입고, 출고.html 페이지 로드 시 기본적으로 5개의 빈 행 추가하는 함수 */
+function initializeTableWithEmptyRows() {
+    const resultTableBody = document.querySelector('.IO-table tbody');
+
+    for (let i = 0; i < 5; i++) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        `;
+        resultTableBody.appendChild(emptyRow);
+    }
+}
 
 /* 사이드바 시간 설정*/
 function updateTime() {
@@ -254,4 +274,52 @@ function deleteRow() {
 }
 
 
-// 입력, 출력 html 
+// 출고.html 전용 search 함수
+function searchOutbound() {
+    const resultTableBody = document.querySelector('.IO-table tbody');
+    
+    // 기존의 행을 모두 제거합니다.
+    resultTableBody.innerHTML = ''; // 기존 행 초기화
+
+    // 2초 후에 dummyData를 추가하는 setTimeout 설정
+    setTimeout(() => {
+        // 임의의 데이터 추가
+        const dummyData = [
+            { no: 1, code: '300000077(이천2 F/C)', category: '전산재고부족3', description: '설명1', phone: '010-1234-5678', fax: '02-1234-5678' },
+            { no: 2, code: '300000077(이천2 F/C)', category: '실물재고부족', description: '설명2', phone: '010-2345-6789', fax: '02-2345-6789' },
+            { no: 3, code: '300000077(이천2 F/C)', category: '파손 및 오염', description: '설명3', phone: '010-3456-7890', fax: '02-3456-7890' },
+        ];
+
+        dummyData.forEach(item => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${item.no}</td>
+                <td>${item.code}</td>
+                <td>${item.category}</td>
+                <td>${item.description}</td>
+                <td>${item.phone}</td>
+                <td>${item.fax}</td>
+            `;
+            resultTableBody.appendChild(newRow);
+        });
+
+        // 조회 결과가 5개 미만일 경우 빈 행 추가
+        const rowCount = dummyData.length;
+        if (rowCount < 5) {
+            for (let i = 0; i < 5 - rowCount; i++) {
+                const emptyRow = document.createElement('tr');
+                emptyRow.innerHTML = `
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                `;
+                resultTableBody.appendChild(emptyRow);
+            }
+        }
+
+        console.log('출고 조회 결과: 임의의 데이터가 추가되었습니다.');
+    }, 2000); // 2000 밀리초 (2초) 후에 실행
+}
