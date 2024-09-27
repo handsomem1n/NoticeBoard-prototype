@@ -1,8 +1,8 @@
 # Notice Solution for CJ_LOIS
-### 특이사항을 기록할 게시판을 추가하는 제안에 쓰일 Prototype 제작
+### 게시판을 추가하는 제안에 쓰일 Prototype 제작
 
 ## Requirement
-- 업무 상 발생한 특이사항을 관계자들에게 별도의 보고하지 않도록 하여 업무 상의 시간 감축을 목표로 하는 게시판 웹
+- 업무 중 발생하는 특이사항을 관계자들에게 불필요한 직접 보고 절차 없이 게시판을 통해 공유함으로써, 업무에서 발생하는 비효율적인 절차를 개선하고자 한다.
   
 ## Functional Requirements
 - 게시판 - post, delete
