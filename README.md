@@ -9,7 +9,7 @@
 - 업무 현황을 check할 수 있는 table
 
 ## Non-Functional Requirements
-- 자사 인트라넷에 유사한 디자인
+- CJ LOIS 인트라넷에 유사한 디자인
 
 ## 제작 기간
 2024.08.07 ~ 2024.08.16(3 Hours a day)
