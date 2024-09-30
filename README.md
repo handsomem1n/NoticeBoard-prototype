@@ -12,7 +12,7 @@
 - CJ대한통운 인트라넷과 유사한 디자인/배치
 
 ## 제작 기간
-2024.08.07 ~ 2024.08.16(3 Hours a day)
+2024.08.07 ~ 2024.08.16(around 3-Hour a day)
 
 ## 기대효과
 [정량적 기대효과]<img width="1416" alt="image" src="https://github.com/user-attachments/assets/2c2cd949-a5cd-4ea2-b91b-7555a7736051">
